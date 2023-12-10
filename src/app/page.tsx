@@ -1,6 +1,8 @@
-import { Mdx } from '@/components/Mdx';
 import { allPosts } from 'contentlayer/generated';
+
 import tw from 'tailwind-styled-components';
+
+import { Mdx } from '@/components/Mdx';
 
 const Button = tw.button<{ $primary?: boolean }>`
     ${(p) => (p.$primary ? 'bg-indigo-600' : 'bg-indigo-300')}
