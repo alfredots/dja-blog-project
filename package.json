@@ -42,7 +42,7 @@
     "@swc/jest": "^0.2.29",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
-    "@types/jest": "^29.5.10",
+    "@types/jest": "^29.5.11",
     "@types/mdx": "^2.0.10",
     "@types/node": "^20",
     "@types/react": "^18",
