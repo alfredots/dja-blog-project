@@ -1,5 +1,6 @@
 import { allPosts } from 'contentlayer/generated';
 
+import { Grid } from '@/components/Grid';
 import { PostCard } from '@/components/PostCard';
 
 export default function Home() {
@@ -7,9 +8,13 @@ export default function Home() {
 
   return (
     <main className="">
-      {posts.map((post) => (
-        <PostCard key={post._id} />
-      ))}
+      <div>
+        <Grid gap={10} sm={1} md={2} lg={3}>
+          {posts.map((post) => (
+            <PostCard key={post._id} />
+          ))}
+        </Grid>
+      </div>
     </main>
   );
 }
