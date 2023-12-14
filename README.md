@@ -45,3 +45,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ```
 chmod ug+x .husky/*
 ```
+
+# Extensões instaladas
+
+Tailwind Styled-Components Extractor

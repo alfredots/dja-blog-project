@@ -16,8 +16,8 @@ const config = {
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   moduleDirectories: ['node_modules', '<rootDir>'],
   testMatch: [
-    '<rootDir>/src/**/*.test.{ts,tsx}',
-    '<rootDir>/src/**/*.spec.{ts,tsx}'
+    '<rootDir>/src/**/**/*.test.{ts,tsx}',
+    '<rootDir>/src/**/**/*.spec.{ts,tsx}'
   ],
   moduleNameMapper: {
     'src/(.*)': '<rootDir>/src/$1'
