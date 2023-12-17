@@ -14,6 +14,10 @@ const config: Config = {
     {
       pattern: /^gap-/,
       variants: ['sm', 'md', 'lg', 'xl', 'xxl']
+    },
+    {
+      pattern: /^text-/,
+      variants: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
     }
   ],
   theme: {
