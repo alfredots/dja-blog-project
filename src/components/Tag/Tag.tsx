@@ -8,9 +8,7 @@ export type TagProps = {
 export const Tag = ({ children, size = 'sm' }: TagProps) => {
   return (
     <>
-      <div>
-        <S.Tag size={size}>{children}</S.Tag>
-      </div>
+      <S.Tag size={size}>{children}</S.Tag>
     </>
   );
 };
