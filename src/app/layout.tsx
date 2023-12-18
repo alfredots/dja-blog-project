@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
-import { headerConfig } from '@/config';
+import { mainNavConfig } from '@/config';
 
 import { Header } from '@/components/Header';
 import { Layout } from '@/components/Layout';
+import { MainNav } from '@/components/MainNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-primary text-gray-50`}>
-        <Header items={headerConfig} />
+        <Header>
+          <MainNav items={mainNavConfig} />
+        </Header>
+
         <Layout>
           <div className="pt-20">{children}</div>
         </Layout>

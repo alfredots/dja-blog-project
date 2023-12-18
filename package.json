@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "contentlayer": "^0.3.4",
     "next": "^13.5.6",
     "next-contentlayer": "^0.3.4",

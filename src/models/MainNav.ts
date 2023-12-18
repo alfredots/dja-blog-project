@@ -3,10 +3,6 @@ export type NavItem = {
   href: string;
 };
 
-export type MainNav = {
-  items: NavItem[];
-};
-
-export type HeaderNav = {
+export type MainNavType = {
   mainNav: NavItem[];
 };
