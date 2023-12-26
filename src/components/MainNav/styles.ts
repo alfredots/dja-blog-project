@@ -17,3 +17,12 @@ export const Li = tw.li`
   ease-in-out
   hover:text-link
 `;
+
+export const Content = tw.div`
+  z-50
+  flex
+  transition-colors
+  duration-300
+  hover:text-link
+  lg:hidden
+`;

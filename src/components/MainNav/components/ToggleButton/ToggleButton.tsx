@@ -1,4 +1,4 @@
-import { X as CloseIcon, List as OpenIcon } from '@phosphor-icons/react';
+import { OpenIcon, CloseIcon } from '@/components/Icons';
 
 type ToggleButtonProps = {
   isOpenMenu: boolean;
