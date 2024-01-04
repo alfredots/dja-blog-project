@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { mainNavConfig } from '@/config';
 
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Layout } from '@/components/Layout';
 import { MainNav } from '@/components/MainNav';
@@ -24,12 +25,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-primary text-gray-50`}>
         <Header>
-          <MainNav items={mainNavConfig} />
+          <MainNav items={mainNavConfig.mainNav} />
         </Header>
 
         <Layout>
           <div className="pt-20">{children}</div>
         </Layout>
+
+        <Footer items={mainNavConfig.mainNav} />
       </body>
     </html>
   );
