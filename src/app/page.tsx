@@ -10,18 +10,16 @@ export default function Home() {
   const posts = allPosts;
 
   return (
-    <main className="">
+    <main>
       <div className="my-6">
         <Profile items={siteConfig} />
       </div>
 
-      <div>
-        <Grid gap={10} sm={1} md={2} lg={3}>
-          {posts.map((post) => (
-            <PostCard key={post._id} />
-          ))}
-        </Grid>
-      </div>
+      <Grid gap={10} sm={1} md={2} lg={3}>
+        {posts.map((post) => (
+          <PostCard key={post._id} />
+        ))}
+      </Grid>
     </main>
   );
 }

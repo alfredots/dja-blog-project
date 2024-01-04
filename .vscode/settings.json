@@ -1,6 +1,9 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "explorer.compactFolders": false,
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript", // if you are using typescript
