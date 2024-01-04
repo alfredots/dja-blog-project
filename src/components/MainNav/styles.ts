@@ -1,5 +1,8 @@
 import tw from 'tailwind-styled-components';
 
+import * as ListItemStyles from '@/components/List/components/ListItem/styles';
+import * as ListStyles from '@/components/List/styles';
+
 export const Nav = tw.nav`
   flex
   items-center
@@ -42,15 +45,13 @@ export const NavMobile = tw.nav`
   shadow-2xl
 `;
 
-export const ListMobile = tw.ul`
+export const ListMobile = tw(ListStyles.Container)`
   w-full
   flex-col
-  items-center
-  justify-center
   px-4
 `;
 
-export const ListItemMobile = tw.li`
+export const ListItemMobile = tw(ListItemStyles.Container)`
   border-b
   border-gray-50
   py-3

@@ -1,7 +1,5 @@
 import { Logo } from '@/components/Logo';
 
-import { MainNavType } from '@/models';
-
 import * as S from './styles';
 
 type HeaderProps = {

@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 
+import { List, ListItem } from '@/components/List';
+
 import { NavItem } from '@/models';
 
 import { ToggleButton } from './components';
@@ -18,13 +20,13 @@ export const MainNav = ({ items }: MainNavProps) => {
   return (
     <>
       <S.Nav>
-        <S.Ul>
+        <List className="hidden lg:flex">
           {items.map((item, index) => (
-            <S.Li key={item.title + index}>
+            <ListItem key={item.title + index}>
               <Link href={item.href}>{item.title}</Link>
-            </S.Li>
+            </ListItem>
           ))}
-        </S.Ul>
+        </List>
 
         <S.Content>
           <ToggleButton
