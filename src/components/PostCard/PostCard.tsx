@@ -1,41 +1,40 @@
-import Image from 'next/image';
+'use client';
 import Link from 'next/link';
+
 import { Tag } from '@/components/Tag';
 
-export const PostCard = () => {
+import { BlogPost } from '@/models';
+
+import * as S from './styles';
+
+type PostCardProps = {
+  post: BlogPost;
+};
+
+export const PostCard = ({ post }: PostCardProps) => {
+  const { frontmatter, readingTime, slug } = post;
+  const { title, description, date, image, tags } = frontmatter;
+
   return (
     <>
-      <Link href="#">
-        <div className="relative h-80 w-full">
-          <Image
-            src="/assets/images/download.avif"
-            alt="title"
-            fill
-            priority
-            className="rounded-xl object-cover object-center"
-          />
-        </div>
+      <Link href={slug}>
+        <S.ImageContainer>
+          <S.Image src={image} alt="title" fill priority />
+        </S.ImageContainer>
 
-        <div className="pt-3">
-          <div className="mb-3 flex flex-wrap gap-2">
-            {['TS', 'JS', 'React'].map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
-        </div>
+        <S.Content>
+          <S.TagsContainer>
+            {tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
+          </S.TagsContainer>
 
-        <time className="text-gray-400">
-          15 de maio de 2023 - 3 minutos de leitura
-        </time>
+          <S.Time>
+            {date} - {readingTime} minutos de leitura
+          </S.Time>
 
-        <p className="mt-2 max-w-md text-ellipsis text-2xl font-medium">
-          O que é Dependency Injection e como aplicar no React.js
-        </p>
+          <S.Title>{title}</S.Title>
 
-        <p className="mt-3 text-gray-400">
-          Vamos aprender à como aplicar esse conceito tão importante no
-          React.js!
-        </p>
+          <S.Description>{description}</S.Description>
+        </S.Content>
       </Link>
     </>
   );
