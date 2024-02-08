@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import { formatDate } from '@/functions';
 
 import { Tag } from '@/components/Tag';
 
@@ -14,10 +14,11 @@ type PostCardProps = {
 export const PostCard = ({ post }: PostCardProps) => {
   const { frontmatter, readingTime, slug } = post;
   const { title, description, date, image, tags } = frontmatter;
+  const formattedDate = formatDate(date);
 
   return (
     <>
-      <Link href={slug}>
+      <S.LinkContainer href={slug}>
         <S.ImageContainer>
           <S.Image src={image} alt="title" fill priority />
         </S.ImageContainer>
@@ -28,14 +29,14 @@ export const PostCard = ({ post }: PostCardProps) => {
           </S.TagsContainer>
 
           <S.Time>
-            {date} - {readingTime} minutos de leitura
+            {formattedDate} - {readingTime} minutos de leitura
           </S.Time>
 
           <S.Title>{title}</S.Title>
 
           <S.Description>{description}</S.Description>
         </S.Content>
-      </Link>
+      </S.LinkContainer>
     </>
   );
 };
