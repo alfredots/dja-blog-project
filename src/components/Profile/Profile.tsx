@@ -1,4 +1,3 @@
-'use client';
 import { SiteType } from '@/models';
 
 import * as S from './styles';

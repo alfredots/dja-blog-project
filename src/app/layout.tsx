@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { mainNavConfig } from '@/config';
 
+import { BackToTop } from '@/components/BackToTop';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Layout } from '@/components/Layout';
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-primary text-gray-50`}>
         <Header>
           <MainNav items={mainNavConfig.mainNav} />
@@ -31,6 +32,8 @@ export default function RootLayout({
         <Layout>
           <div className="py-20">{children}</div>
         </Layout>
+
+        <BackToTop />
 
         <Footer items={mainNavConfig.mainNav} />
       </body>
