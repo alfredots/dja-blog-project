@@ -8,6 +8,7 @@ export {
   // Arrows
   ArrowLeft as ArrowLeftIcon,
   ArrowUp as ArrowUpIcon,
+  ArrowRight as ArrowRightIcon,
 
   // Social Icons
   LinkedinLogo as LinkedinIcon,
