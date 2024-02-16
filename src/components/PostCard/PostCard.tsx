@@ -19,7 +19,7 @@ export const PostCard = ({ post, isMain }: PostCardProps) => {
 
   return (
     <>
-      <S.LinkContainer href={slug} $isMain={isMain}>
+      <S.LinkContainer href={slug} $isMain={!!isMain}>
         <S.ImageContainer className={`${isMain && 'lg:mr-3'}`}>
           <S.Image src={image} alt="title" fill priority />
         </S.ImageContainer>
