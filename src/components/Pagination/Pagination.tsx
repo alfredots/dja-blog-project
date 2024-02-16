@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import * as S from './styles';
 
 type PaginationProps = {
@@ -22,7 +20,7 @@ export const Pagination = ({
     <>
       <S.Container>
         {!isFirst && (
-          <S.Link href="#">
+          <S.Link href={prevPage}>
             <S.PrevPageIcon /> Página anterior
           </S.Link>
         )}
@@ -32,7 +30,7 @@ export const Pagination = ({
         </div>
 
         {!isLast && (
-          <S.Link href="#">
+          <S.Link href={nextPage}>
             Próxima página <S.NextPageIcon />
           </S.Link>
         )}

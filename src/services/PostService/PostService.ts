@@ -1,6 +1,6 @@
 import { allPosts } from 'contentlayer/generated';
 
-import { formatPosts } from '@/functions';
+import { formatPosts, paginationPosts } from '@/functions';
 
 type GetPostAllParams = {
   limit?: number;
@@ -8,15 +8,15 @@ type GetPostAllParams = {
 };
 
 export const PostService = {
-  getAll: ({ limit = 10, currentPage = 1 }: GetPostAllParams = {}) => {
+  getAll: ({ limit = 2, currentPage = 1 }: GetPostAllParams = {}) => {
     const formattedPosts = formatPosts(allPosts);
     const numberPages = Math.ceil(formattedPosts.length / limit);
-
-    // precisa de uma função para retornar os posts paginados
+    const paginatePosts = paginationPosts(formattedPosts, limit, currentPage);
 
     return {
-      posts: formattedPosts,
-      numberPages
+      posts: paginatePosts,
+      numberPages,
+      currentPage
     };
   },
   getBySlug: (slug: string) => {

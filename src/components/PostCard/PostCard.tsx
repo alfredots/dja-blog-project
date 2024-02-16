@@ -7,23 +7,24 @@ import { BlogPost } from '@/models';
 
 import * as S from './styles';
 
-type PostCardProps = {
+export type PostCardProps = {
   post: BlogPost;
+  isMain?: boolean;
 };
 
-export const PostCard = ({ post }: PostCardProps) => {
+export const PostCard = ({ post, isMain }: PostCardProps) => {
   const { frontmatter, readingTime, slug } = post;
   const { title, description, date, image, tags } = frontmatter;
   const formattedDate = formatDate(date);
 
   return (
     <>
-      <S.LinkContainer href={slug}>
-        <S.ImageContainer>
+      <S.LinkContainer href={slug} $isMain={isMain}>
+        <S.ImageContainer className={`${isMain && 'lg:mr-3'}`}>
           <S.Image src={image} alt="title" fill priority />
         </S.ImageContainer>
 
-        <S.Content>
+        <S.Content className={`${isMain && 'lg:pt-0'}`}>
           <S.TagsContainer>
             {tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
           </S.TagsContainer>
