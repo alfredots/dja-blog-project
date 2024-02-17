@@ -28,7 +28,7 @@ jobs:
         run: yarn install
 
       - name: Linting
-        run: yarn lint
+        run: yarn lint:eslint
 
       - name: Typecheck
         run: yarn typecheck
