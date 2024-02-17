@@ -44,6 +44,7 @@
     "tailwind-styled-components": "^2.2.0"
   },
   "devDependencies": {
+    "@swc/core": "^1.4.1",
     "@swc/jest": "^0.2.29",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
