@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
+import Script from 'next/script';
+
 import { mainNavConfig, siteConfig } from '@/config';
 
 import { BackToTop } from '@/components/BackToTop';
@@ -28,6 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <Script
+        async
+        src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+      />
       <body className={`${inter.className} bg-primary text-gray-50`}>
         <Header>
           <MainNav items={mainNavConfig.mainNav} />
